@@ -1,0 +1,258 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2F5E5A8E1D64B7D400DD70AB /* BMDPedometer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2F5E5A8D1D64B7D400DD70AB /* BMDPedometer.h */; };
+		2F5E5A901D64B7D400DD70AB /* BMDPedometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5E5A8F1D64B7D400DD70AB /* BMDPedometer.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2F5E5A881D64B7D400DD70AB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				2F5E5A8E1D64B7D400DD70AB /* BMDPedometer.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2F5E5A8A1D64B7D400DD70AB /* libBMDPedometer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBMDPedometer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F5E5A8D1D64B7D400DD70AB /* BMDPedometer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDPedometer.h; sourceTree = "<group>"; };
+		2F5E5A8F1D64B7D400DD70AB /* BMDPedometer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMDPedometer.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2F5E5A871D64B7D400DD70AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2F5E5A811D64B7D400DD70AB = {
+			isa = PBXGroup;
+			children = (
+				2F5E5A8C1D64B7D400DD70AB /* BMDPedometer */,
+				2F5E5A8B1D64B7D400DD70AB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2F5E5A8B1D64B7D400DD70AB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2F5E5A8A1D64B7D400DD70AB /* libBMDPedometer.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2F5E5A8C1D64B7D400DD70AB /* BMDPedometer */ = {
+			isa = PBXGroup;
+			children = (
+				2F5E5A8D1D64B7D400DD70AB /* BMDPedometer.h */,
+				2F5E5A8F1D64B7D400DD70AB /* BMDPedometer.m */,
+			);
+			path = BMDPedometer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2F5E5A891D64B7D400DD70AB /* BMDPedometer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F5E5A931D64B7D400DD70AB /* Build configuration list for PBXNativeTarget "BMDPedometer" */;
+			buildPhases = (
+				2F5E5A861D64B7D400DD70AB /* Sources */,
+				2F5E5A871D64B7D400DD70AB /* Frameworks */,
+				2F5E5A881D64B7D400DD70AB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BMDPedometer;
+			productName = BMDPedometer;
+			productReference = 2F5E5A8A1D64B7D400DD70AB /* libBMDPedometer.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2F5E5A821D64B7D400DD70AB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Matheus Mariano";
+				TargetAttributes = {
+					2F5E5A891D64B7D400DD70AB = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 2F5E5A851D64B7D400DD70AB /* Build configuration list for PBXProject "BMDPedometer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2F5E5A811D64B7D400DD70AB;
+			productRefGroup = 2F5E5A8B1D64B7D400DD70AB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2F5E5A891D64B7D400DD70AB /* BMDPedometer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2F5E5A861D64B7D400DD70AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F5E5A901D64B7D400DD70AB /* BMDPedometer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2F5E5A911D64B7D400DD70AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2F5E5A921D64B7D400DD70AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2F5E5A941D64B7D400DD70AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native/React/**";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2F5E5A951D64B7D400DD70AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native/React/**";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2F5E5A851D64B7D400DD70AB /* Build configuration list for PBXProject "BMDPedometer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F5E5A911D64B7D400DD70AB /* Debug */,
+				2F5E5A921D64B7D400DD70AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2F5E5A931D64B7D400DD70AB /* Build configuration list for PBXNativeTarget "BMDPedometer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F5E5A941D64B7D400DD70AB /* Debug */,
+				2F5E5A951D64B7D400DD70AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2F5E5A821D64B7D400DD70AB /* Project object */;
+}
