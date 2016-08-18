@@ -1,4 +1,4 @@
-package com.emesonsantana.RNPedometer;
+package com.emesonsantana.BMDPedometer;
 
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -11,14 +11,14 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 import com.facebook.react.bridge.JavaScriptModule;
 
-public class RNPedometer implements ReactPackage {
+public class BMDPedometer implements ReactPackage {
 
   @Override
   public List<NativeModule> createNativeModules(
                               ReactApplicationContext reactContext) {
     List<NativeModule> modules = new ArrayList<>();
 
-    modules.add(new RNPedometerModule(reactContext));
+    modules.add(new BMDPedometerModule(reactContext));
 
     return modules;
   }

@@ -1,4 +1,4 @@
-package com.emesonsantana.RNPedometer;
+package com.emesonsantana.BMDPedometer;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -12,7 +12,7 @@ import android.os.Bundle;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 
-public class RNPedometerModule extends ReactContextBaseJavaModule implements SensorEventListener, StepListener {
+public class BMDPedometerModule extends ReactContextBaseJavaModule implements SensorEventListener, StepListener {
 
   ReactApplicationContext reactContext;
 
@@ -32,7 +32,7 @@ public class RNPedometerModule extends ReactContextBaseJavaModule implements Sen
   private Sensor mSensor;             // Pedometer sensor returned by sensor manager
   private StepDetector stepDetector;
 
-  public RNPedometerModule(ReactApplicationContext reactContext) {
+  public BMDPedometerModule(ReactApplicationContext reactContext) {
     super(reactContext);
     this.reactContext = reactContext;
     this.reactContext.addLifecycleEventListener(this);
@@ -40,7 +40,7 @@ public class RNPedometerModule extends ReactContextBaseJavaModule implements Sen
     this.startAt = 0;
     this.numSteps = 0;
     this.startNumSteps = 0;
-    this.setStatus(RNPedometerModule.STOPPED);
+    this.setStatus(BMDPedometerModule.STOPPED);
     this.stepDetector = new StepDetector();
     this.stepDetector.registerListener(this);
 
@@ -49,7 +49,7 @@ public class RNPedometerModule extends ReactContextBaseJavaModule implements Sen
 
   @Override
   public String getName() {
-    return "RNPedometer";
+    return "BMDPedometer";
   }
 
   @ReactMethod
@@ -59,7 +59,7 @@ public class RNPedometerModule extends ReactContextBaseJavaModule implements Sen
     if (accel != null || stepCounter != null) {
       callback.invoke(true);
     } else {
-      this.setStatus(RNPedometerModule.ERROR_NO_SENSOR_FOUND);
+      this.setStatus(BMDPedometerModule.ERROR_NO_SENSOR_FOUND);
       callback.invoke(false);
     }
   }
@@ -95,7 +95,7 @@ public class RNPedometerModule extends ReactContextBaseJavaModule implements Sen
 
   @ReactMethod
   private void stopPedometerUpdates() {
-    if (this.status == RNPedometerModule.RUNNING) {
+    if (this.status == BMDPedometerModule.RUNNING) {
       this.stop();
     }
   }
@@ -131,10 +131,10 @@ public class RNPedometerModule extends ReactContextBaseJavaModule implements Sen
     }
 
     // If not running, then just return
-    if (this.status == RNPedometerModule.STOPPED) {
+    if (this.status == BMDPedometerModule.STOPPED) {
       return;
     }
-    this.setStatus(RNPedometerModule.RUNNING);
+    this.setStatus(BMDPedometerModule.RUNNING);
 
     if(this.mSensor.getType() == Sensor.TYPE_STEP_COUNTER){
       float steps = event.values[0];
@@ -164,14 +164,14 @@ public class RNPedometerModule extends ReactContextBaseJavaModule implements Sen
    */
   private void start() {
       // If already starting or running, then return
-      if ((this.status == RNPedometerModule.RUNNING) || (this.status == RNPedometerModule.STARTING)) {
+      if ((this.status == BMDPedometerModule.RUNNING) || (this.status == BMDPedometerModule.STARTING)) {
           return;
       }
 
       this.startAt = System.currentTimeMillis();
       this.numSteps = 0;
       this.startNumSteps = 0;
-      this.setStatus(RNPedometerModule.STARTING);
+      this.setStatus(BMDPedometerModule.STARTING);
 
       // Get pedometer or accelerometer from sensor manager
       this.mSensor = this.sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
@@ -181,22 +181,22 @@ public class RNPedometerModule extends ReactContextBaseJavaModule implements Sen
       if (this.mSensor != null) {
           int sensorDelay = this.mSensor.getType() == Sensor.TYPE_STEP_COUNTER ? SensorManager.SENSOR_DELAY_UI : SensorManager.SENSOR_DELAY_FASTEST;
           if (this.sensorManager.registerListener(this, this.mSensor, sensorDelay)) {
-              this.setStatus(RNPedometerModule.STARTING);
+              this.setStatus(BMDPedometerModule.STARTING);
           } else {
-              this.setStatus(RNPedometerModule.ERROR_FAILED_TO_START);
+              this.setStatus(BMDPedometerModule.ERROR_FAILED_TO_START);
               this.sendPedometerUpdateEvent(
                 this.getErrorParamsMap(
-                  RNPedometerModule.ERROR_FAILED_TO_START,
+                  BMDPedometerModule.ERROR_FAILED_TO_START,
                   "Device sensor returned an error."
                 )
               );
               return;
           };
       } else {
-          this.setStatus(RNPedometerModule.ERROR_FAILED_TO_START);
+          this.setStatus(BMDPedometerModule.ERROR_FAILED_TO_START);
           this.sendPedometerUpdateEvent(
             this.getErrorParamsMap(
-              RNPedometerModule.ERROR_FAILED_TO_START,
+              BMDPedometerModule.ERROR_FAILED_TO_START,
               "No sensors found to register step counter listening to."
             )
           );
@@ -208,10 +208,10 @@ public class RNPedometerModule extends ReactContextBaseJavaModule implements Sen
    * Stop listening to sensor.
    */
   private void stop() {
-      if (this.status != RNPedometerModule.STOPPED) {
+      if (this.status != BMDPedometerModule.STOPPED) {
           this.sensorManager.unregisterListener(this);
       }
-      this.setStatus(RNPedometerModule.STOPPED);
+      this.setStatus(BMDPedometerModule.STOPPED);
   }
 
   private void setStatus(int status) {
@@ -230,7 +230,7 @@ public class RNPedometerModule extends ReactContextBaseJavaModule implements Sen
         map.putInt("startDate", this.startAt);
         map.putInt("endDate", System.currentTimeMillis());
         map.putDouble("numberOfSteps", this.numSteps);
-        map.putDouble("distance", this.numSteps * RNPedometerModule.STEP_IN_METERS);
+        map.putDouble("distance", this.numSteps * BMDPedometerModule.STEP_IN_METERS);
     } catch (Exception e) {
         e.printStackTrace();
     }

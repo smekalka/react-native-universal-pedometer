@@ -14,7 +14,7 @@
  * the License.
  */
 
-package com.emesonsantana.RNPedometer;
+package com.emesonsantana.BMDPedometer;
 
 /**
  * A collection of matrix and vector operations used specifically for sensor

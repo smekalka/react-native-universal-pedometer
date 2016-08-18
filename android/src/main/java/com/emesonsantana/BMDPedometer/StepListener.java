@@ -14,7 +14,7 @@
  * the License.
  */
 
-package com.emesonsantana.RNPedometer;
+package com.emesonsantana.BMDPedometer;
 
 /**
  * Listens for alerts about steps being detected.
