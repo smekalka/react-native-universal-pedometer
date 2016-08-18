@@ -5,14 +5,21 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.support.annotation.Nullable;
 
 import android.os.Handler;
 import android.os.Bundle;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.Callback;
+import com.facebook.react.bridge.ReactMethod;
+import com.facebook.react.bridge.LifecycleEventListener;
+import com.facebook.react.modules.core.DeviceEventManagerModule;
 
-public class BMDPedometerModule extends ReactContextBaseJavaModule implements SensorEventListener, StepListener {
+public class BMDPedometerModule extends ReactContextBaseJavaModule implements SensorEventListener, StepListener, LifecycleEventListener {
 
   ReactApplicationContext reactContext;
 
@@ -53,40 +60,40 @@ public class BMDPedometerModule extends ReactContextBaseJavaModule implements Se
   }
 
   @ReactMethod
-  private void isStepCountingAvailable(Callback callback) {
+  public void isStepCountingAvailable(Callback callback) {
     Sensor stepCounter = this.sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
     Sensor accel = this.sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     if (accel != null || stepCounter != null) {
-      callback.invoke(true);
+      callback.invoke(false);
     } else {
       this.setStatus(BMDPedometerModule.ERROR_NO_SENSOR_FOUND);
-      callback.invoke(false);
+      callback.invoke(true);
     }
   }
 
   @ReactMethod
-  private void isDistanceAvailable(Callback callback) {
-    callback.invoke(false);
+  public void isDistanceAvailable(Callback callback) {
+    callback.invoke(true);
   }
 
   @ReactMethod
-  private void isFloorCountingAvailable(Callback callback) {
-    callback.invoke(false);
+  public void isFloorCountingAvailable(Callback callback) {
+    callback.invoke(true);
   }
 
   @ReactMethod
-  private void isPaceAvailable(Callback callback) {
-    callback.invoke(false);
+  public void isPaceAvailable(Callback callback) {
+    callback.invoke(true);
   }
 
   @ReactMethod
-  private void isCadenceAvailable(Callback callback) {
-    callback.invoke(false);
+  public void isCadenceAvailable(Callback callback) {
+    callback.invoke(true);
   }
 
   @ReactMethod
-  private void startPedometerUpdatesFromDate(Integer date) {
-    if (this.status != PedometerListener.RUNNING) {
+  public void startPedometerUpdatesFromDate(Integer date) {
+    if (this.status != BMDPedometerModule.RUNNING) {
       // If not running, then this is an async call, so don't worry about waiting
       // We drop the callback onto our stack, call start, and let start and the sensor callback fire off the callback down the road
       this.start();
@@ -94,15 +101,23 @@ public class BMDPedometerModule extends ReactContextBaseJavaModule implements Se
   }
 
   @ReactMethod
-  private void stopPedometerUpdates() {
+  public void stopPedometerUpdates() {
     if (this.status == BMDPedometerModule.RUNNING) {
       this.stop();
     }
   }
 
   @ReactMethod
-  private void queryPedometerDataBetweenDates(Integer startDate, Integer endDate, Callback callback) {
-    callback.invoke(this.getStepsJSON());
+  public void queryPedometerDataBetweenDates(Integer startDate, Integer endDate, Callback callback) {
+    callback.invoke(this.getStepsParamsMap());
+  }
+
+  @Override
+  public void onHostResume() {
+  }
+
+  @Override
+  public void onHostPause() {
   }
 
   @Override
@@ -227,8 +242,8 @@ public class BMDPedometerModule extends ReactContextBaseJavaModule implements Se
     // pedometerData.floorsAscended;
     // pedometerData.floorsDescended;
     try {
-        map.putInt("startDate", this.startAt);
-        map.putInt("endDate", System.currentTimeMillis());
+        map.putInt("startDate", (int)this.startAt);
+        map.putInt("endDate", (int)System.currentTimeMillis());
         map.putDouble("numberOfSteps", this.numSteps);
         map.putDouble("distance", this.numSteps * BMDPedometerModule.STEP_IN_METERS);
     } catch (Exception e) {
