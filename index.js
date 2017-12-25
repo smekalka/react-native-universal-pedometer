@@ -3,7 +3,7 @@
 import { NativeModules, NativeEventEmitter } from 'react-native';
 const { BMDPedometer } = NativeModules;
 
-const EventEmitter = new NativeEventEmitter(RNPedometer);
+const EventEmitter = new NativeEventEmitter(BMDPedometer);
 let subscription;
 
 var Pedometer = {
