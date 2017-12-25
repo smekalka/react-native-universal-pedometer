@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		844442DC1CB01D4A00E10B29 /* RNPedometer.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 844442DB1CB01D4A00E10B29 /* RNPedometer.h */; };
-		844442DE1CB01D4A00E10B29 /* RNPedometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 844442DD1CB01D4A00E10B29 /* RNPedometer.m */; };
+		844442DC1CB01D4A00E10B29 /* BMDPedometer.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 844442DB1CB01D4A00E10B29 /* BMDPedometer.h */; };
+		844442DE1CB01D4A00E10B29 /* BMDPedometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 844442DD1CB01D4A00E10B29 /* BMDPedometer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,7 +18,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				844442DC1CB01D4A00E10B29 /* RNPedometer.h in Copy Files */,
+				844442DC1CB01D4A00E10B29 /* BMDPedometer.h in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -26,9 +26,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		844442D81CB01D4A00E10B29 /* libRNPedometer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNPedometer.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		844442DB1CB01D4A00E10B29 /* RNPedometer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNPedometer.h; sourceTree = "<group>"; };
-		844442DD1CB01D4A00E10B29 /* RNPedometer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNPedometer.m; sourceTree = "<group>"; };
+		844442D81CB01D4A00E10B29 /* libBMDPedometer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBMDPedometer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		844442DB1CB01D4A00E10B29 /* BMDPedometer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDPedometer.h; sourceTree = "<group>"; };
+		844442DD1CB01D4A00E10B29 /* BMDPedometer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMDPedometer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				843404A11ECD04EA00E4411B /* Libraries */,
-				844442DA1CB01D4A00E10B29 /* RNPedometer */,
+				844442DA1CB01D4A00E10B29 /* BMDPedometer */,
 				844442D91CB01D4A00E10B29 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,26 +61,26 @@
 		844442D91CB01D4A00E10B29 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				844442D81CB01D4A00E10B29 /* libRNPedometer.a */,
+				844442D81CB01D4A00E10B29 /* libBMDPedometer.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		844442DA1CB01D4A00E10B29 /* RNPedometer */ = {
+		844442DA1CB01D4A00E10B29 /* BMDPedometer */ = {
 			isa = PBXGroup;
 			children = (
-				844442DB1CB01D4A00E10B29 /* RNPedometer.h */,
-				844442DD1CB01D4A00E10B29 /* RNPedometer.m */,
+				844442DB1CB01D4A00E10B29 /* BMDPedometer.h */,
+				844442DD1CB01D4A00E10B29 /* BMDPedometer.m */,
 			);
-			path = RNPedometer;
+			path = BMDPedometer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		844442D71CB01D4A00E10B29 /* RNPedometer */ = {
+		844442D71CB01D4A00E10B29 /* BMDPedometer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 844442E11CB01D4A00E10B29 /* Build configuration list for PBXNativeTarget "RNPedometer" */;
+			buildConfigurationList = 844442E11CB01D4A00E10B29 /* Build configuration list for PBXNativeTarget "BMDPedometer" */;
 			buildPhases = (
 				844442D41CB01D4A00E10B29 /* Sources */,
 				844442D51CB01D4A00E10B29 /* Frameworks */,
@@ -90,9 +90,9 @@
 			);
 			dependencies = (
 			);
-			name = RNPedometer;
-			productName = RNPedometer;
-			productReference = 844442D81CB01D4A00E10B29 /* libRNPedometer.a */;
+			name = BMDPedometer;
+			productName = BMDPedometer;
+			productReference = 844442D81CB01D4A00E10B29 /* libBMDPedometer.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -110,7 +110,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 844442D31CB01D4A00E10B29 /* Build configuration list for PBXProject "RNPedometer" */;
+			buildConfigurationList = 844442D31CB01D4A00E10B29 /* Build configuration list for PBXProject "BMDPedometer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -122,7 +122,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				844442D71CB01D4A00E10B29 /* RNPedometer */,
+				844442D71CB01D4A00E10B29 /* BMDPedometer */,
 			);
 		};
 /* End PBXProject section */
@@ -132,7 +132,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				844442DE1CB01D4A00E10B29 /* RNPedometer.m in Sources */,
+				844442DE1CB01D4A00E10B29 /* BMDPedometer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +258,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		844442D31CB01D4A00E10B29 /* Build configuration list for PBXProject "RNPedometer" */ = {
+		844442D31CB01D4A00E10B29 /* Build configuration list for PBXProject "BMDPedometer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				844442DF1CB01D4A00E10B29 /* Debug */,
@@ -267,7 +267,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		844442E11CB01D4A00E10B29 /* Build configuration list for PBXNativeTarget "RNPedometer" */ = {
+		844442E11CB01D4A00E10B29 /* Build configuration list for PBXNativeTarget "BMDPedometer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				844442E21CB01D4A00E10B29 /* Debug */,
