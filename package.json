@@ -22,7 +22,5 @@
     "url": "https://github.com/matheusmariano/react-native-universal-pedometer/issues"
   },
   "homepage": "https://github.com/matheusmariano/react-native-universal-pedometer#readme",
-  "dependencies": {
-    "react-native": "^0.31.0"
-  }
+  "dependencies": {}
 }
