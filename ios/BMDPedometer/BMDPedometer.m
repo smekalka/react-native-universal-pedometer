@@ -64,15 +64,15 @@ RCT_EXPORT_METHOD(startPedometerUpdatesFromDate:(NSDate *)date) {
         formatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
         formatter.timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
     });
+    
     return @{
-
              @"startDate": [formatter stringFromDate:data.startDate]?:[NSNull null],
              @"endDate": [formatter stringFromDate:data.endDate]?:[NSNull null],
              @"numberOfSteps": data.numberOfSteps?:[NSNull null],
              @"distance": data.distance?:[NSNull null],
              @"floorsAscended": data.floorsAscended?:[NSNull null],
              @"floorsDescended": data.floorsDescended?:[NSNull null],
-             };
+    };
 }
 
 RCT_EXPORT_METHOD(stopPedometerUpdates) {
