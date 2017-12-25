@@ -7,31 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F5E5A8E1D64B7D400DD70AB /* BMDPedometer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2F5E5A8D1D64B7D400DD70AB /* BMDPedometer.h */; };
-		2F5E5A901D64B7D400DD70AB /* BMDPedometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F5E5A8F1D64B7D400DD70AB /* BMDPedometer.m */; };
+		844442DC1CB01D4A00E10B29 /* RNPedometer.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 844442DB1CB01D4A00E10B29 /* RNPedometer.h */; };
+		844442DE1CB01D4A00E10B29 /* RNPedometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 844442DD1CB01D4A00E10B29 /* RNPedometer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		2F5E5A881D64B7D400DD70AB /* CopyFiles */ = {
+		844442D61CB01D4A00E10B29 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				2F5E5A8E1D64B7D400DD70AB /* BMDPedometer.h in CopyFiles */,
+				844442DC1CB01D4A00E10B29 /* RNPedometer.h in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2F5E5A8A1D64B7D400DD70AB /* libBMDPedometer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBMDPedometer.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F5E5A8D1D64B7D400DD70AB /* BMDPedometer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDPedometer.h; sourceTree = "<group>"; };
-		2F5E5A8F1D64B7D400DD70AB /* BMDPedometer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMDPedometer.m; sourceTree = "<group>"; };
+		844442D81CB01D4A00E10B29 /* libRNPedometer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNPedometer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		844442DB1CB01D4A00E10B29 /* RNPedometer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNPedometer.h; sourceTree = "<group>"; };
+		844442DD1CB01D4A00E10B29 /* RNPedometer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNPedometer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2F5E5A871D64B7D400DD70AB /* Frameworks */ = {
+		844442D51CB01D4A00E10B29 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,99 +42,107 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2F5E5A811D64B7D400DD70AB = {
+		843404A11ECD04EA00E4411B /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				2F5E5A8C1D64B7D400DD70AB /* BMDPedometer */,
-				2F5E5A8B1D64B7D400DD70AB /* Products */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		844442CF1CB01D4A00E10B29 = {
+			isa = PBXGroup;
+			children = (
+				843404A11ECD04EA00E4411B /* Libraries */,
+				844442DA1CB01D4A00E10B29 /* RNPedometer */,
+				844442D91CB01D4A00E10B29 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		2F5E5A8B1D64B7D400DD70AB /* Products */ = {
+		844442D91CB01D4A00E10B29 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2F5E5A8A1D64B7D400DD70AB /* libBMDPedometer.a */,
+				844442D81CB01D4A00E10B29 /* libRNPedometer.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2F5E5A8C1D64B7D400DD70AB /* BMDPedometer */ = {
+		844442DA1CB01D4A00E10B29 /* RNPedometer */ = {
 			isa = PBXGroup;
 			children = (
-				2F5E5A8D1D64B7D400DD70AB /* BMDPedometer.h */,
-				2F5E5A8F1D64B7D400DD70AB /* BMDPedometer.m */,
+				844442DB1CB01D4A00E10B29 /* RNPedometer.h */,
+				844442DD1CB01D4A00E10B29 /* RNPedometer.m */,
 			);
-			path = BMDPedometer;
+			path = RNPedometer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2F5E5A891D64B7D400DD70AB /* BMDPedometer */ = {
+		844442D71CB01D4A00E10B29 /* RNPedometer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2F5E5A931D64B7D400DD70AB /* Build configuration list for PBXNativeTarget "BMDPedometer" */;
+			buildConfigurationList = 844442E11CB01D4A00E10B29 /* Build configuration list for PBXNativeTarget "RNPedometer" */;
 			buildPhases = (
-				2F5E5A861D64B7D400DD70AB /* Sources */,
-				2F5E5A871D64B7D400DD70AB /* Frameworks */,
-				2F5E5A881D64B7D400DD70AB /* CopyFiles */,
+				844442D41CB01D4A00E10B29 /* Sources */,
+				844442D51CB01D4A00E10B29 /* Frameworks */,
+				844442D61CB01D4A00E10B29 /* Copy Files */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = BMDPedometer;
-			productName = BMDPedometer;
-			productReference = 2F5E5A8A1D64B7D400DD70AB /* libBMDPedometer.a */;
+			name = RNPedometer;
+			productName = RNPedometer;
+			productReference = 844442D81CB01D4A00E10B29 /* libRNPedometer.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2F5E5A821D64B7D400DD70AB /* Project object */ = {
+		844442D01CB01D4A00E10B29 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = "Matheus Mariano";
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = galmis;
 				TargetAttributes = {
-					2F5E5A891D64B7D400DD70AB = {
-						CreatedOnToolsVersion = 7.3.1;
+					844442D71CB01D4A00E10B29 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 3575K6D48K;
 					};
 				};
 			};
-			buildConfigurationList = 2F5E5A851D64B7D400DD70AB /* Build configuration list for PBXProject "BMDPedometer" */;
+			buildConfigurationList = 844442D31CB01D4A00E10B29 /* Build configuration list for PBXProject "RNPedometer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 2F5E5A811D64B7D400DD70AB;
-			productRefGroup = 2F5E5A8B1D64B7D400DD70AB /* Products */;
+			mainGroup = 844442CF1CB01D4A00E10B29;
+			productRefGroup = 844442D91CB01D4A00E10B29 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2F5E5A891D64B7D400DD70AB /* BMDPedometer */,
+				844442D71CB01D4A00E10B29 /* RNPedometer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2F5E5A861D64B7D400DD70AB /* Sources */ = {
+		844442D41CB01D4A00E10B29 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F5E5A901D64B7D400DD70AB /* BMDPedometer.m in Sources */,
+				844442DE1CB01D4A00E10B29 /* RNPedometer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		2F5E5A911D64B7D400DD70AB /* Debug */ = {
+		844442DF1CB01D4A00E10B29 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -143,8 +152,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -166,18 +177,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
-		2F5E5A921D64B7D400DD70AB /* Release */ = {
+		844442E01CB01D4A00E10B29 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -187,8 +197,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -204,19 +216,22 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		2F5E5A941D64B7D400DD70AB /* Debug */ = {
+		844442E21CB01D4A00E10B29 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../node_modules/react-native/React/**",
-					"$(SRCROOT)/../../react-native/React/**",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDef,
+					"$(SRCROOT)/../../React/**",
+					"$(SRCROOT)/../react-native/React/**",
+					"$(SRCROOT)/node_modules/react-native/React/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -224,12 +239,15 @@
 			};
 			name = Debug;
 		};
-		2F5E5A951D64B7D400DD70AB /* Release */ = {
+		844442E31CB01D4A00E10B29 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-					"$(SRCROOT)/../node_modules/react-native/React/**",
-					"$(SRCROOT)/../../react-native/React/**",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDef,
+					"$(SRCROOT)/../../React/**",
+					"$(SRCROOT)/../react-native/React/**",
+					"$(SRCROOT)/node_modules/react-native/React/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -240,25 +258,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2F5E5A851D64B7D400DD70AB /* Build configuration list for PBXProject "BMDPedometer" */ = {
+		844442D31CB01D4A00E10B29 /* Build configuration list for PBXProject "RNPedometer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2F5E5A911D64B7D400DD70AB /* Debug */,
-				2F5E5A921D64B7D400DD70AB /* Release */,
+				844442DF1CB01D4A00E10B29 /* Debug */,
+				844442E01CB01D4A00E10B29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2F5E5A931D64B7D400DD70AB /* Build configuration list for PBXNativeTarget "BMDPedometer" */ = {
+		844442E11CB01D4A00E10B29 /* Build configuration list for PBXNativeTarget "RNPedometer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2F5E5A941D64B7D400DD70AB /* Debug */,
-				2F5E5A951D64B7D400DD70AB /* Release */,
+				844442E21CB01D4A00E10B29 /* Debug */,
+				844442E31CB01D4A00E10B29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 2F5E5A821D64B7D400DD70AB /* Project object */;
+	rootObject = 844442D01CB01D4A00E10B29 /* Project object */;
 }
