@@ -64,31 +64,31 @@ public class BMDPedometerModule extends ReactContextBaseJavaModule implements Se
     Sensor stepCounter = this.sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
     Sensor accel = this.sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     if (accel != null || stepCounter != null) {
-      callback.invoke(false);
+      callback.invoke(null, true);
     } else {
       this.setStatus(BMDPedometerModule.ERROR_NO_SENSOR_FOUND);
-      callback.invoke(true);
+      callback.invoke("Error: step counting is not available", false);
     }
   }
 
   @ReactMethod
   public void isDistanceAvailable(Callback callback) {
-    callback.invoke(true);
+    callback.invoke(null, true);
   }
 
   @ReactMethod
   public void isFloorCountingAvailable(Callback callback) {
-    callback.invoke(true);
+    callback.invoke(null, true);
   }
 
   @ReactMethod
   public void isPaceAvailable(Callback callback) {
-    callback.invoke(true);
+    callback.invoke(null, true);
   }
 
   @ReactMethod
   public void isCadenceAvailable(Callback callback) {
-    callback.invoke(true);
+    callback.invoke(null, true);
   }
 
   @ReactMethod
