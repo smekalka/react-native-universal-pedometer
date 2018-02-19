@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		43D42B5F203B089B00EC7462 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D42B5E203B089B00EC7462 /* CoreMotion.framework */; };
 		43D42B61203B08AA00EC7462 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D42B60203B08AA00EC7462 /* CoreLocation.framework */; };
+		43D42B77203B2CB600EC7462 /* SOStepDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D42B75203B2CB600EC7462 /* SOStepDetector.m */; };
 		844442DC1CB01D4A00E10B29 /* BMDPedometer.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 844442DB1CB01D4A00E10B29 /* BMDPedometer.h */; };
 		844442DE1CB01D4A00E10B29 /* BMDPedometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 844442DD1CB01D4A00E10B29 /* BMDPedometer.m */; };
 /* End PBXBuildFile section */
@@ -30,7 +31,8 @@
 /* Begin PBXFileReference section */
 		43D42B5E203B089B00EC7462 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		43D42B60203B08AA00EC7462 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		43D42B74203B2C4D00EC7462 /* SOMotionDetector */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SOMotionDetector; path = BMDPedometer/SOMotionDetector; sourceTree = "<group>"; };
+		43D42B75203B2CB600EC7462 /* SOStepDetector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SOStepDetector.m; sourceTree = "<group>"; };
+		43D42B76203B2CB600EC7462 /* SOStepDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SOStepDetector.h; sourceTree = "<group>"; };
 		844442D81CB01D4A00E10B29 /* libBMDPedometer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBMDPedometer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		844442DB1CB01D4A00E10B29 /* BMDPedometer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDPedometer.h; sourceTree = "<group>"; };
 		844442DD1CB01D4A00E10B29 /* BMDPedometer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMDPedometer.m; sourceTree = "<group>"; };
@@ -61,7 +63,6 @@
 		843404A11ECD04EA00E4411B /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				43D42B74203B2C4D00EC7462 /* SOMotionDetector */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -87,6 +88,8 @@
 		844442DA1CB01D4A00E10B29 /* BMDPedometer */ = {
 			isa = PBXGroup;
 			children = (
+				43D42B76203B2CB600EC7462 /* SOStepDetector.h */,
+				43D42B75203B2CB600EC7462 /* SOStepDetector.m */,
 				844442DB1CB01D4A00E10B29 /* BMDPedometer.h */,
 				844442DD1CB01D4A00E10B29 /* BMDPedometer.m */,
 			);
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				844442DE1CB01D4A00E10B29 /* BMDPedometer.m in Sources */,
+				43D42B77203B2CB600EC7462 /* SOStepDetector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
