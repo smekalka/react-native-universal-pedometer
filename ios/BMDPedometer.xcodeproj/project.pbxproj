@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43D42B5F203B089B00EC7462 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D42B5E203B089B00EC7462 /* CoreMotion.framework */; };
+		43D42B61203B08AA00EC7462 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D42B60203B08AA00EC7462 /* CoreLocation.framework */; };
 		844442DC1CB01D4A00E10B29 /* BMDPedometer.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 844442DB1CB01D4A00E10B29 /* BMDPedometer.h */; };
 		844442DE1CB01D4A00E10B29 /* BMDPedometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 844442DD1CB01D4A00E10B29 /* BMDPedometer.m */; };
 /* End PBXBuildFile section */
@@ -26,6 +28,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		43D42B5E203B089B00EC7462 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		43D42B60203B08AA00EC7462 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		43D42B62203B0B6000EC7462 /* SOMotionDetector */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SOMotionDetector; sourceTree = "<group>"; };
 		844442D81CB01D4A00E10B29 /* libBMDPedometer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBMDPedometer.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		844442DB1CB01D4A00E10B29 /* BMDPedometer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BMDPedometer.h; sourceTree = "<group>"; };
 		844442DD1CB01D4A00E10B29 /* BMDPedometer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BMDPedometer.m; sourceTree = "<group>"; };
@@ -36,15 +41,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43D42B61203B08AA00EC7462 /* CoreLocation.framework in Frameworks */,
+				43D42B5F203B089B00EC7462 /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43D42B5D203B089B00EC7462 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				43D42B60203B08AA00EC7462 /* CoreLocation.framework */,
+				43D42B5E203B089B00EC7462 /* CoreMotion.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		843404A11ECD04EA00E4411B /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				43D42B62203B0B6000EC7462 /* SOMotionDetector */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -55,6 +72,7 @@
 				843404A11ECD04EA00E4411B /* Libraries */,
 				844442DA1CB01D4A00E10B29 /* BMDPedometer */,
 				844442D91CB01D4A00E10B29 /* Products */,
+				43D42B5D203B089B00EC7462 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,7 +119,7 @@
 		844442D01CB01D4A00E10B29 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = galmis;
 				TargetAttributes = {
 					844442D71CB01D4A00E10B29 = {
@@ -147,14 +165,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -192,14 +216,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -227,11 +257,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDef,
-					"$(SRCROOT)/../../React/**",
-					"$(SRCROOT)/../react-native/React/**",
-					"$(SRCROOT)/node_modules/react-native/React/**",
+					"$(SRCROOT)/../../React",
+					"$(SRCROOT)/../../react-native/React",
+					"$(SRCROOT)/../../react-native/Libraries",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -243,11 +271,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDef,
 					"$(SRCROOT)/../../React/**",
-					"$(SRCROOT)/../react-native/React/**",
-					"$(SRCROOT)/node_modules/react-native/React/**",
+					"$(SRCROOT)/../../react-native/React/**",
+					"$(SRCROOT)/../../react-native/Libraries/**",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

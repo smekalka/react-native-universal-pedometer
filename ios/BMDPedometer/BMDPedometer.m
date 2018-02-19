@@ -1,4 +1,5 @@
 #import "BMDPedometer.h"
+#import "SOStepDetector.h"
 
 #import <CoreMotion/CoreMotion.h>
 #import <React/RCTBridge.h>
@@ -17,7 +18,7 @@ RCT_EXPORT_MODULE();
 
 - (NSArray<NSString *> *)supportedEvents{
 
-    return @[@"pedometerDataDidUpdate"];
+    return @[@"pedometerDataDidUpdate", @"pedometerWasStep"];
 }
 
 + (BOOL)requiresMainQueueSetup
@@ -25,7 +26,9 @@ RCT_EXPORT_MODULE();
     return YES;
 }
 
-RCT_EXPORT_METHOD(isStepCountingAvailable:(RCTResponseSenderBlock) callback) {
+//[SOLocationManager sharedInstance].allowsBackgroundLocationUpdates = YES;
+
+RCT_EXPORT_METHOD(isStepCountingAvailable:(RCTResponseSenderBlock)callback) {
     callback(@[[NSNull null], @([CMPedometer isStepCountingAvailable])]);
 }
 
@@ -75,9 +78,25 @@ RCT_EXPORT_METHOD(startPedometerUpdatesFromDate:(NSDate *)date) {
     };
 }
 
+RCT_EXPORT_METHOD(startStepsDetection) {
+    [[SOStepDetector sharedInstance] startDetectionWithUpdateBlock:^(NSError *error) {
+        if(error) {
+            retun;
+        } else {
+            [self sendEventWithName:@"pedometerWasStep"];
+        }
+    }];
+}
+
+
 RCT_EXPORT_METHOD(stopPedometerUpdates) {
     [self.pedometer stopPedometerUpdates];
 }
+
+RCT_EXPORT_METHOD(stopStepsDetection) {
+    [[SOStepDetector sharedInstance]  stopDetection];
+}
+
 
 #pragma mark - Private
 
