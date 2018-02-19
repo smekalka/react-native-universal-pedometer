@@ -69,7 +69,7 @@
         
         CMAcceleration acceleration = accelerometerData.acceleration;
         
-        CGFloat strength = 1.2f;
+        CGFloat strength = 1.0f;
         BOOL isStep = NO;
         if (fabs(acceleration.x) > strength || fabs(acceleration.y) > strength || fabs(acceleration.z) > strength) {
             isStep = YES;
