@@ -11,7 +11,7 @@
 #import "SOStepDetector.h"
 #import <CoreMotion/CoreMotion.h>
 
-#define kUpdateInterval 0.2f
+#define kUpdateInterval 0.15f
 @interface SOStepDetector()
 
 @property (strong, nonatomic) CMMotionManager *motionManager;
@@ -28,25 +28,25 @@
     dispatch_once(&onceToken, ^{
         instance = [self new];
     });
-    
+
     return instance;
 }
 
 - (instancetype)init
 {
     self = [super init];
-    
+
     self.motionManager = [CMMotionManager new];
-    
+
     self.motionManager.accelerometerUpdateInterval = kUpdateInterval;
     self.motionManager.deviceMotionUpdateInterval  = kUpdateInterval;
     self.motionManager.gyroUpdateInterval          = kUpdateInterval;
     self.motionManager.magnetometerUpdateInterval  = kUpdateInterval;
     self.motionManager.showsDeviceMovementDisplay  = YES;
-    
+
     self.queue = [NSOperationQueue new];
     self.queue.maxConcurrentOperationCount = 1;
-    
+
     return self;
 }
 
@@ -55,7 +55,7 @@
     if (self.motionManager.isAccelerometerActive) {
         return;
     }
-    
+
     [self.motionManager startAccelerometerUpdatesToQueue:self.queue
                                              withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
         if (error) {
@@ -66,10 +66,10 @@
             }
             return ;
         }
-        
+
         CMAcceleration acceleration = accelerometerData.acceleration;
-        
-        CGFloat strength = 1.0f;
+
+        CGFloat strength = 1.05f;
         BOOL isStep = NO;
         if (fabs(acceleration.x) > strength || fabs(acceleration.y) > strength || fabs(acceleration.z) > strength) {
             isStep = YES;
