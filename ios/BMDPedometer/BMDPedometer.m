@@ -91,12 +91,8 @@ RCT_EXPORT_METHOD(startStepsDetection) {
 
 RCT_EXPORT_METHOD(stopPedometerUpdates) {
     [self.pedometer stopPedometerUpdates];
-}
-
-RCT_EXPORT_METHOD(stopStepsDetection) {
     [[SOStepDetector sharedInstance]  stopDetection];
 }
-
 
 #pragma mark - Private
 

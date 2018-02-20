@@ -45,7 +45,6 @@ export default {
 
     stopPedometerUpdates: () => {
         BMDPedometer.stopPedometerUpdates();
-        BMDPedometer.stopStepsDetection();
 
         if (subscription) {
             subscription.remove();
