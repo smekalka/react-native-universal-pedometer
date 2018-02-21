@@ -11,7 +11,7 @@
 #import "SOStepDetector.h"
 #import <CoreMotion/CoreMotion.h>
 
-#define kUpdateInterval 0.15f
+#define kUpdateInterval 0.17f
 @interface SOStepDetector()
 
 @property (strong, nonatomic) CMMotionManager *motionManager;
@@ -69,7 +69,7 @@
 
         CMAcceleration acceleration = accelerometerData.acceleration;
 
-        CGFloat strength = 1.05f;
+        CGFloat strength = 1.09f;
         BOOL isStep = NO;
         if (fabs(acceleration.x) > strength || fabs(acceleration.y) > strength || fabs(acceleration.z) > strength) {
             isStep = YES;
