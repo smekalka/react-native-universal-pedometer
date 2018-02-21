@@ -81,13 +81,12 @@ RCT_EXPORT_METHOD(startPedometerUpdatesFromDate:(NSDate *)date) {
 RCT_EXPORT_METHOD(startStepsDetection) {
     [[SOStepDetector sharedInstance] startDetectionWithUpdateBlock:^(NSError *error) {
         if(error) {
-            retun;
+            return;
         } else {
-            [self sendEventWithName:@"pedometerWasStep"];
+            [self sendEventWithName:@"pedometerWasStep" body:@true];
         }
     }];
 }
-
 
 RCT_EXPORT_METHOD(stopPedometerUpdates) {
     [self.pedometer stopPedometerUpdates];
