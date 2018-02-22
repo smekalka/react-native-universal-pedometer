@@ -26,8 +26,6 @@ RCT_EXPORT_MODULE();
     return YES;
 }
 
-//[SOLocationManager sharedInstance].allowsBackgroundLocationUpdates = YES;
-
 RCT_EXPORT_METHOD(isStepCountingAvailable:(RCTResponseSenderBlock)callback) {
     callback(@[[NSNull null], @([CMPedometer isStepCountingAvailable])]);
 }
