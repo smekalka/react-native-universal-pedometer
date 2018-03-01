@@ -11,7 +11,7 @@
 #import "SOStepDetector.h"
 #import <CoreMotion/CoreMotion.h>
 
-#define kUpdateInterval 0.1f
+#define kUpdateInterval 0.2f
 @interface SOStepDetector()
 
 @property (strong, nonatomic) CMMotionManager *motionManager;
