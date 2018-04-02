@@ -1,12 +1,9 @@
-'use strict';
-
-import {NativeModules, NativeEventEmitter} from 'react-native';
+import React from 'react';
+import {DeviceEventEmitter, NativeModules} from 'react-native';
 
 const {BMDPedometer} = NativeModules;
 
-const EventEmitter = new NativeEventEmitter(BMDPedometer);
-let subscription;
-let stepsSubscription;
+const EventEmitter = new DeviceEventEmitter(BMDPedometer);
 
 export default {
     isStepCountingAvailable: callback => {
@@ -21,23 +18,18 @@ export default {
         BMDPedometer.isFloorCountingAvailable(callback);
     },
 
+    isPaceAvailable: callback => {
+        BMDPedometer.isPaceAvailable(callback);
+    },
+
     isCadenceAvailable: callback => {
         BMDPedometer.isCadenceAvailable(callback);
     },
 
     startPedometerUpdatesFromDate: (date, handler) => {
         BMDPedometer.startPedometerUpdatesFromDate(date);
-
-        subscription = EventEmitter.addListener('pedometerDataDidUpdate', handler);
+        DeviceEventEmitter.addListener('pedometerDataDidUpdate', handler);
     },
-
-    startStepsDetection: (handler) => {
-        BMDPedometer.startStepsDetection();
-
-        stepsSubscription = EventEmitter.addListener('pedometerWasStep', handler);
-    },
-
-
 
     queryPedometerDataBetweenDates: (startDate, endDate, handler) => {
         BMDPedometer.queryPedometerDataBetweenDates(startDate, endDate, handler);
@@ -45,13 +37,5 @@ export default {
 
     stopPedometerUpdates: () => {
         BMDPedometer.stopPedometerUpdates();
-
-        if (subscription) {
-            subscription.remove();
-        }
-
-        if (stepsSubscription) {
-            stepsSubscription.remove();
-        }
     }
 };
