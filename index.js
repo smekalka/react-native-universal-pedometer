@@ -6,36 +6,36 @@ const {BMDPedometer} = NativeModules;
 const EventEmitter = new DeviceEventEmitter(BMDPedometer);
 
 export default {
-    isStepCountingAvailable: callback => {
-        BMDPedometer.isStepCountingAvailable(callback);
-    },
+  isStepCountingAvailable: callback => {
+    BMDPedometer.isStepCountingAvailable(callback);
+  },
 
-    isDistanceAvailable: callback => {
-        BMDPedometer.isDistanceAvailable(callback);
-    },
+  isDistanceAvailable: callback => {
+    BMDPedometer.isDistanceAvailable(callback);
+  },
 
-    isFloorCountingAvailable: callback => {
-        BMDPedometer.isFloorCountingAvailable(callback);
-    },
+  isFloorCountingAvailable: callback => {
+    BMDPedometer.isFloorCountingAvailable(callback);
+  },
 
-    isPaceAvailable: callback => {
-        BMDPedometer.isPaceAvailable(callback);
-    },
+  isPaceAvailable: callback => {
+    BMDPedometer.isPaceAvailable(callback);
+  },
 
-    isCadenceAvailable: callback => {
-        BMDPedometer.isCadenceAvailable(callback);
-    },
+  isCadenceAvailable: callback => {
+    BMDPedometer.isCadenceAvailable(callback);
+  },
 
-    startPedometerUpdatesFromDate: (date, handler) => {
-        BMDPedometer.startPedometerUpdatesFromDate(date);
-        DeviceEventEmitter.addListener('pedometerDataDidUpdate', handler);
-    },
+  startPedometerUpdatesFromDate: (date, handler) => {
+    BMDPedometer.startPedometerUpdatesFromDate(date);
+    DeviceEventEmitter.addListener('pedometerDataDidUpdate', handler);
+  },
 
-    queryPedometerDataBetweenDates: (startDate, endDate, handler) => {
-        BMDPedometer.queryPedometerDataBetweenDates(startDate, endDate, handler);
-    },
+  queryPedometerDataBetweenDates: (startDate, endDate, handler) => {
+    BMDPedometer.queryPedometerDataBetweenDates(startDate, endDate, handler);
+  },
 
-    stopPedometerUpdates: () => {
-        BMDPedometer.stopPedometerUpdates();
-    }
+  stopPedometerUpdates: () => {
+    BMDPedometer.stopPedometerUpdates();
+  }
 };
