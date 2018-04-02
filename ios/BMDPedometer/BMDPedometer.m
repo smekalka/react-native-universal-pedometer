@@ -1,9 +1,8 @@
 #import "BMDPedometer.h"
-#import "SOStepDetector.h"
-
 #import <CoreMotion/CoreMotion.h>
-#import <React/RCTBridge.h>
-#import <React/RCTEventDispatcher.h>
+#import <React/RCTLog.h>
+
+#define NullErr [NSNull, null]
 
 @interface BMDPedometer ()
 @property (nonatomic, readonly) CMPedometer *pedometer;
@@ -12,37 +11,38 @@
 
 @implementation BMDPedometer
 
-@synthesize bridge = _bridge;
-
-RCT_EXPORT_MODULE();
+RCT_EXPORT_MODULE()
 
 - (NSArray<NSString *> *)supportedEvents{
 
-    return @[@"pedometerDataDidUpdate", @"pedometerWasStep"];
+    return @[@"pedometerDataDidUpdate"];
 }
 
-+ (BOOL)requiresMainQueueSetup
-{
-    return YES;
-}
-
-RCT_EXPORT_METHOD(isStepCountingAvailable:(RCTResponseSenderBlock)callback) {
-    callback(@[[NSNull null], @([CMPedometer isStepCountingAvailable])]);
+RCT_EXPORT_METHOD(isStepCountingAvailable:(RCTResponseSenderBlock) callback) {
+    callback(@[NullErr, @([CMPedometer isStepCountingAvailable])]);
 }
 
 RCT_EXPORT_METHOD(isFloorCountingAvailable:(RCTResponseSenderBlock) callback) {
-    callback(@[[NSNull null], @([CMPedometer isFloorCountingAvailable])]);
+    callback([@NullErr, @([CMPedometer isFloorCountingAvailable])]);
 }
 
 RCT_EXPORT_METHOD(isDistanceAvailable:(RCTResponseSenderBlock) callback) {
-    callback(@[[NSNull null], @([CMPedometer isDistanceAvailable])]);
+    callback(@[NullErr, @([CMPedometer isDistanceAvailable])]);
+}
+
+RCT_EXPORT_METHOD(isCadenceAvailable: (RCTResponseSenderBlock) callback) {
+    callback(@[NullErr, @([CMPedometer isCadenceAvailable])]);
+}
+
+RCT_EXPORT_METHOD(isPaceAvailable: (RCTResponseSenderBlock) callback) {
+    callback(@[NullErr, @([CMPedometer isPaceAvailable])]);
 }
 
 RCT_EXPORT_METHOD(queryPedometerDataBetweenDates:(NSDate *)startDate endDate:(NSDate *)endDate handler:(RCTResponseSenderBlock)handler) {
     [self.pedometer queryPedometerDataFromDate:startDate
                                         toDate:endDate
                                    withHandler:^(CMPedometerData *pedometerData, NSError *error) {
-                                       handler(@[error.description?:[NSNull null], [self dictionaryFromPedometerData:pedometerData]]);
+                                       handler(@[error.description?:NullErr, [self dictionaryFromPedometerData:pedometerData]]);
                                    }];
 }
 
@@ -67,28 +67,19 @@ RCT_EXPORT_METHOD(startPedometerUpdatesFromDate:(NSDate *)date) {
     });
     
     return @{
-             @"startDate": [formatter stringFromDate:data.startDate]?:[NSNull null],
-             @"endDate": [formatter stringFromDate:data.endDate]?:[NSNull null],
-             @"numberOfSteps": data.numberOfSteps?:[NSNull null],
-             @"distance": data.distance?:[NSNull null],
-             @"floorsAscended": data.floorsAscended?:[NSNull null],
-             @"floorsDescended": data.floorsDescended?:[NSNull null],
+             @"startDate": [formatter stringFromDate:data.startDate]?:NullErr,
+             @"endDate": [formatter stringFromDate:data.endDate]?:NullErr,
+             @"numberOfSteps": data.numberOfSteps?:NullErr,
+             @"distance": data.distance?:NullErr,
+             @"floorsAscended": data.floorsAscended?:NullErr,
+             @"floorsDescended": data.floorsDescended?:NullErr,
+             @"currentPace": data.currentPace?:NullErr,
+             @"currentCadence": data.currentCadence?:NullErr,
     };
-}
-
-RCT_EXPORT_METHOD(startStepsDetection) {
-    [[SOStepDetector sharedInstance] startDetectionWithUpdateBlock:^(NSError *error) {
-        if(error) {
-            return;
-        } else {
-            [self sendEventWithName:@"pedometerWasStep" body:@true];
-        }
-    }];
 }
 
 RCT_EXPORT_METHOD(stopPedometerUpdates) {
     [self.pedometer stopPedometerUpdates];
-    [[SOStepDetector sharedInstance]  stopDetection];
 }
 
 #pragma mark - Private
@@ -100,10 +91,9 @@ RCT_EXPORT_METHOD(stopPedometerUpdates) {
         return nil;
     }
 
-    _pedometer = [[CMPedometer alloc]init];
+    _pedometer = [CMPedometer new;
 
     return self;
 }
-
 
 @end
