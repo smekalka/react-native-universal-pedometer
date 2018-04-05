@@ -3,7 +3,7 @@ import {DeviceEventEmitter, NativeModules} from 'react-native';
 
 const {BMDPedometer} = NativeModules;
 
-const EventEmitter = new DeviceEventEmitter(BMDPedometer);
+const EventEmitter = DeviceEventEmitter(BMDPedometer);
 
 export default {
   isStepCountingAvailable: callback => {
