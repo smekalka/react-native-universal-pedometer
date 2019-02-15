@@ -1,9 +1,10 @@
-import React from 'react';
-import { DeviceEventEmitter, NativeModules } from 'react-native';
+'use strict';
+
+import { NativeEventEmitter, NativeModules } from 'react-native';
 
 const { BMDPedometer } = NativeModules;
 
-const EventEmitter = DeviceEventEmitter(BMDPedometer);
+const PedometerEmitter = new NativeEventEmitter(BMDPedometer);
 
 export default {
   isStepCountingAvailable: callback => {
@@ -26,13 +27,13 @@ export default {
     BMDPedometer.isCadenceAvailable(callback);
   },
 
-  startPedometerUpdatesFromDate: (date, handler) => {
+  startPedometerUpdatesFromDate: (date, listener) => {
     BMDPedometer.startPedometerUpdatesFromDate(date);
-    DeviceEventEmitter.addListener('pedometerDataDidUpdate', handler);
+    PedometerEmitter.addListener('pedometerDataDidUpdate', listener);
   },
 
-  queryPedometerDataBetweenDates: (startDate, endDate, handler) => {
-    BMDPedometer.queryPedometerDataBetweenDates(startDate, endDate, handler);
+  queryPedometerDataBetweenDates: (startDate, endDate, listener) => {
+    BMDPedometer.queryPedometerDataBetweenDates(startDate, endDate, listener);
   },
 
   stopPedometerUpdates: () => {
