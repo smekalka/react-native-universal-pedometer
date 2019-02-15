@@ -1,7 +1,7 @@
 import React from 'react';
-import {DeviceEventEmitter, NativeModules} from 'react-native';
+import { DeviceEventEmitter, NativeModules } from 'react-native';
 
-const {BMDPedometer} = NativeModules;
+const { BMDPedometer } = NativeModules;
 
 const EventEmitter = DeviceEventEmitter(BMDPedometer);
 

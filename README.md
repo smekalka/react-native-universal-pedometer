@@ -5,10 +5,12 @@ React Native pedometer support for iOS version 8.0 and higher and Android. The m
 ## Install
 
 ```sh
-npm install --save npm i @asserdata/react-native-universal-pedometer
+npm install --save JWWon/react-native-universal-pedometer
 # Or
+yarn add JWWon/react-native-universal-pedometer
 
-yarn add @asserdata/react-native-universal-pedometer
+# Then
+react-native link react-native-universal-pedometer
 ```
 
 ## Basic usage
