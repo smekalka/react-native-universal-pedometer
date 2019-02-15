@@ -2,7 +2,7 @@
 #import <CoreMotion/CoreMotion.h>
 #import <React/RCTLog.h>
 
-#define NullErr [NSNull, null]
+#define NullErr [NSNull null]
 
 @interface BMDPedometer ()
 @property (nonatomic, readwrite) CMPedometer *pedometer;
@@ -23,7 +23,7 @@ RCT_EXPORT_METHOD(isStepCountingAvailable:(RCTResponseSenderBlock) callback) {
 }
 
 RCT_EXPORT_METHOD(isFloorCountingAvailable:(RCTResponseSenderBlock) callback) {
-    callback([@NullErr, @([CMPedometer isFloorCountingAvailable])]);
+    callback(@[NullErr, @([CMPedometer isFloorCountingAvailable])]);
 }
 
 RCT_EXPORT_METHOD(isDistanceAvailable:(RCTResponseSenderBlock) callback) {
