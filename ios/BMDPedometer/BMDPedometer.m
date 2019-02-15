@@ -5,7 +5,7 @@
 #define NullErr [NSNull, null]
 
 @interface BMDPedometer ()
-@property (nonatomic, readonly) CMPedometer *pedometer;
+@property (nonatomic, readwrite) CMPedometer *pedometer;
 @end
 
 
@@ -65,7 +65,7 @@ RCT_EXPORT_METHOD(startPedometerUpdatesFromDate:(NSDate *)date) {
         formatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
         formatter.timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
     });
-    
+
     return @{
              @"startDate": [formatter stringFromDate:data.startDate]?:NullErr,
              @"endDate": [formatter stringFromDate:data.endDate]?:NullErr,
@@ -91,7 +91,7 @@ RCT_EXPORT_METHOD(stopPedometerUpdates) {
         return nil;
     }
 
-    _pedometer = [CMPedometer new;
+    _pedometer = [CMPedometer new];
 
     return self;
 }
