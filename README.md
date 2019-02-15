@@ -16,23 +16,23 @@ react-native link react-native-universal-pedometer
 ## Basic usage
 
 ```js
-// Import the react-native-pedometer module
-import Pedometer from '@asserdata/react-native-universal-pedometer';
+// Import the react-native-pedometer moduleP
+import Pedometer from '@JWWon/react-native-universal-pedometer';
 
 // determine pedometer availability
-Pedometer.isStepCountingAvailable((error, isAvailable) => {
+Pedometer.isStepCountingAvailable((error, avaliable) => {
   // do something
 });
 
-Pedometer.isDistanceAvailable((error, isAvailable) => {
+Pedometer.isDistanceAvailable((error, avaliable) => {
   // do something
 });
 
-Pedometer.isFloorCountingAvailable((error, isAvailable) => {
+Pedometer.isFloorCountingAvailable((error, avaliable) => {
   // do something
 });
 
-Pedometer.isCadenceAvailable((error, isAvailable) => {
+Pedometer.isCadenceAvailable((error, avaliable) => {
   // do something
 });
 
