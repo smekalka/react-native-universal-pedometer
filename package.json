@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AsserData/react-native-universal-pedometer.git"
+    "url": "git@github.com:smekalka/react-native-universal-pedometer.git"
   },
   "keywords": [
     "react",
