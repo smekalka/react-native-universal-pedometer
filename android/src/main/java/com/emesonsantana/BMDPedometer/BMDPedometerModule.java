@@ -242,8 +242,8 @@ public class BMDPedometerModule extends ReactContextBaseJavaModule implements Se
     // pedometerData.floorsAscended;
     // pedometerData.floorsDescended;
     try {
-        map.putInt("startDate", (int)this.startAt);
-        map.putInt("endDate", (int)System.currentTimeMillis());
+        map.putString("startDate", String.valueOf(startAt));
+        map.putString("endDate", String.valueOf(System.currentTimeMillis()));
         map.putDouble("numberOfSteps", this.numSteps);
         map.putDouble("distance", this.numSteps * BMDPedometerModule.STEP_IN_METERS);
     } catch (Exception e) {
