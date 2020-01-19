@@ -1,7 +1,7 @@
 {
-  "name": "react-native-universal-pedometer",
-  "version": "0.2.0",
-  "description": "React Native universal pedometer.",
+  "name": "@JWWon/react-native-universal-pedometer",
+  "version": "1.0.3",
+  "description": "React Native universal pedometer. This is a fork from @asserdata/react-native-universal-pedometer.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,11 +16,14 @@
     "universal",
     "pedometer"
   ],
-  "author": "Matheus Mariano",
-  "license": "ISC",
+  "author": "Jiwoon Won",
+  "license": "MIT",
+  "types": "./lib/index.d.ts",
   "bugs": {
-    "url": "https://github.com/matheusmariano/react-native-universal-pedometer/issues"
+    "url": "https://github.com/JWWon/react-native-universal-pedometer/issues"
   },
-  "homepage": "https://github.com/matheusmariano/react-native-universal-pedometer#readme",
-  "dependencies": {}
+  "homepage": "https://github.com/JWWon/react-native-universal-pedometer#readme",
+  "peerDependencies": {
+    "react-native": ">=0.40.0"
+  }
 }

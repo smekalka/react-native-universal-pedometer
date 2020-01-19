@@ -1,57 +1,42 @@
 'use strict';
 
-import {NativeModules, NativeEventEmitter} from 'react-native';
+import { NativeEventEmitter, NativeModules } from 'react-native';
 
-const {BMDPedometer} = NativeModules;
+const { BMDPedometer } = NativeModules;
 
-const EventEmitter = new NativeEventEmitter(BMDPedometer);
-let subscription;
-let stepsSubscription;
+const PedometerEmitter = new NativeEventEmitter(BMDPedometer);
 
 export default {
-    isStepCountingAvailable: callback => {
-        BMDPedometer.isStepCountingAvailable(callback);
-    },
+  isStepCountingAvailable: callback => {
+    BMDPedometer.isStepCountingAvailable(callback);
+  },
 
-    isDistanceAvailable: callback => {
-        BMDPedometer.isDistanceAvailable(callback);
-    },
+  isDistanceAvailable: callback => {
+    BMDPedometer.isDistanceAvailable(callback);
+  },
 
-    isFloorCountingAvailable: callback => {
-        BMDPedometer.isFloorCountingAvailable(callback);
-    },
+  isFloorCountingAvailable: callback => {
+    BMDPedometer.isFloorCountingAvailable(callback);
+  },
 
-    isCadenceAvailable: callback => {
-        BMDPedometer.isCadenceAvailable(callback);
-    },
+  isPaceAvailable: callback => {
+    BMDPedometer.isPaceAvailable(callback);
+  },
 
-    startPedometerUpdatesFromDate: (date, handler) => {
-        BMDPedometer.startPedometerUpdatesFromDate(date);
+  isCadenceAvailable: callback => {
+    BMDPedometer.isCadenceAvailable(callback);
+  },
 
-        subscription = EventEmitter.addListener('pedometerDataDidUpdate', handler);
-    },
+  startPedometerUpdatesFromDate: (date, listener) => {
+    BMDPedometer.startPedometerUpdatesFromDate(date);
+    PedometerEmitter.addListener('pedometerDataDidUpdate', listener);
+  },
 
-    startStepsDetection: (handler) => {
-        BMDPedometer.startStepsDetection();
+  queryPedometerDataBetweenDates: (startDate, endDate, listener) => {
+    BMDPedometer.queryPedometerDataBetweenDates(startDate, endDate, listener);
+  },
 
-        stepsSubscription = EventEmitter.addListener('pedometerWasStep', handler);
-    },
-
-
-
-    queryPedometerDataBetweenDates: (startDate, endDate, handler) => {
-        BMDPedometer.queryPedometerDataBetweenDates(startDate, endDate, handler);
-    },
-
-    stopPedometerUpdates: () => {
-        BMDPedometer.stopPedometerUpdates();
-
-        if (subscription) {
-            subscription.remove();
-        }
-
-        if (stepsSubscription) {
-            stepsSubscription.remove();
-        }
-    }
+  stopPedometerUpdates: () => {
+    BMDPedometer.stopPedometerUpdates();
+  }
 };
